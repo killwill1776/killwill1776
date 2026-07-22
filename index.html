@@ -423,6 +423,12 @@
   }
   @media(prefers-reduced-motion:reduce){
     .hero-title,.hero-flag{animation:none}
+  }/* ---- mobile nav: show links, remove placeholder MENU (desktop untouched) ---- */
+  @media(max-width:900px){
+    .menu-btn{display:none}
+    header.nav{flex-wrap:wrap;row-gap:8px}
+    nav.links{display:flex;flex-wrap:wrap;gap:8px 16px;width:100%;justify-content:center}
+    nav.links a{font-size:.7rem;letter-spacing:.13em;padding:0}
   }</style>
 </head>
 <body>
