@@ -399,7 +399,31 @@
     .scroll-cue .bar{animation:none}
     *{transition:none!important}
   }
-</style>
+/* ---- subtle glitch (matched to Freedom Banger) ---- */
+  .hero-title{will-change:transform,filter}
+  .hero-title{animation:kwGlitch 3.2s infinite}
+  .hero-flag{animation:kwFlagGlitch 3.2s infinite}
+  @keyframes kwGlitch{
+    0%,29%,34%,69%,72%,100%{transform:translate(0);text-shadow:0 8px 60px rgba(0,0,0,.6)}
+    30%{transform:translateX(-2px);text-shadow:2px 0 rgba(193,36,49,.5),-2px 0 rgba(58,91,191,.5),0 8px 60px rgba(0,0,0,.6)}
+    31%{transform:translateX(2px);text-shadow:-2px 0 rgba(193,36,49,.5),2px 0 rgba(58,91,191,.5),0 8px 60px rgba(0,0,0,.6)}
+    32%{transform:translate(0);text-shadow:0 8px 60px rgba(0,0,0,.6)}
+    70%{transform:skewX(.4deg);text-shadow:1px 0 rgba(193,36,49,.45),-1px 0 rgba(58,91,191,.45),0 8px 60px rgba(0,0,0,.6)}
+    70.5%{transform:skewX(-.4deg)}
+    71%{transform:translate(0);text-shadow:0 8px 60px rgba(0,0,0,.6)}
+  }
+  @keyframes kwFlagGlitch{
+    0%,29%,34%,69%,72%,100%{transform:translate(0);filter:none}
+    30%{transform:translateX(-1px);filter:hue-rotate(-10deg)}
+    31%{transform:translateX(1px)}
+    32%{transform:translate(0);filter:none}
+    70%{transform:skewX(.3deg);filter:contrast(1.15)}
+    70.5%{transform:skewX(-.3deg)}
+    71%{transform:translate(0);filter:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-title,.hero-flag{animation:none}
+  }</style>
 </head>
 <body>
 
